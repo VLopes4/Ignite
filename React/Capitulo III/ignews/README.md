@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fundamentos do Next.js
 
-## Getting Started
+Nesse módulo entenderemos como o Next.js transforma a nossa maneira de desenvolver aplicações front-end e descobriremos conceitos importantes como SSR e SSG.
 
-First, run the development server:
+![Início](https://user-images.githubusercontent.com/48124913/173100584-ca3c2550-c884-4020-9857-fd20fc5bac23.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Back-end no front-end
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Durante esse módulo entenderemos como o front-end se transformou nos últimos anos com a possibilidade de termos funções back-end (serverless) executando em um ambiente front-end.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![Início - Logado](https://user-images.githubusercontent.com/48124913/173098675-f2e19a21-7b7e-4a85-9291-fed1325a2253.png)
+![Stripe](https://user-images.githubusercontent.com/48124913/173101915-c36e9761-00dc-43d9-bb56-b82347b14cd3.png)
+# Front-end JAMStack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+É muito comum o desenvolvimento de aplicações front-end que não estão conectadas a um único back-end hoje em dia, por isso, aqui vamos entender o conceito de JAMStack e como conectar nosso front-end com um CMS.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Posts](https://user-images.githubusercontent.com/48124913/173102332-fe9ad233-2940-4275-89f8-b7c1205de84a.png)
+![Post](https://user-images.githubusercontent.com/48124913/173103194-48d2459e-02bf-42d6-b738-5c28fa99c5dc.png)
+![Post - Inscrito](https://user-images.githubusercontent.com/48124913/173102693-47aa873f-30fd-4afd-9de1-1e1d5850fc3d.png)
 
-## Learn More
+## Tecnologias
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<ul>
+    <li>Next.js</li>
+    <li>Typescript</li>
+    <li>Sass</li>
+    <li>Github</li>
+    <li>FaunaDB</li>
+    <li>Prismic CMS</li>
+    <li>Stripe</li>
+</ul>
