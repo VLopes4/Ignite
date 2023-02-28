@@ -16,7 +16,6 @@ export const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> =
 			  size="lg"
 			  id={name}
 			  name={name} 
-			  type="email"
 			  variant="filled"
 			  bgColor="gray.900"
 			  focusBorderColor="pink.500"
