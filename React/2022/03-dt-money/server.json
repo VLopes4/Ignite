@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "venda",
+      "price": 14000,
+      "createdAt": "2023-04-14T17:18:46.097Z"
+    },
+    {
+      "id": 2,
+      "description": "Hospedagem",
+      "type": "outcome",
+      "category": "pagamento",
+      "price": 500,
+      "createdAt": "2023-04-14T17:18:46.097Z"
+    }
+  ]
+}
