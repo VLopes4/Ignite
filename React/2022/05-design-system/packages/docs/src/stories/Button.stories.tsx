@@ -6,9 +6,33 @@ import React from 'react'
 export default {
   title: 'Form/Button',
   component: Button,
-
   args: {
     children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline_radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline_radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    onClick: {
+      action: 'click',
+    },
   },
 } as Meta<ButtonProps>
 
@@ -23,7 +47,7 @@ export const Secondary: StoryObj<ButtonProps> = {
 
 export const Tertiary: StoryObj<ButtonProps> = {
   args: {
-    variant: 'secondary',
+    variant: 'tertiary',
     children: 'Cancel',
   },
 }
