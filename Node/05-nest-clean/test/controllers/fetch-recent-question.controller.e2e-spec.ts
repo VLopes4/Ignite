@@ -1,8 +1,8 @@
-import { AppModule } from "@/app.module";
-import { PrismaService } from "@/prisma/prisma.service";
-import { INestApplication } from "@nestjs/common";
-import { JwtService } from "@nestjs/jwt";
-import { Test } from "@nestjs/testing";
+import { AppModule } from '@/infra/app.module'
+import { PrismaService } from '@/infra/database/prisma/prisma.service'
+import { INestApplication } from '@nestjs/common'
+import { JwtService } from '@nestjs/jwt'
+import { Test } from '@nestjs/testing'
 import request from 'supertest'
 
 describe('Fetch recent questions (E2E)', () => {
@@ -20,17 +20,17 @@ describe('Fetch recent questions (E2E)', () => {
     jwt = moduleRef.get(JwtService)
 
     await app.init()
-  });
+  })
 
   test('[GET] /questions', async () => {
     const user = await prisma.user.create({
       data: {
         name: 'John Doe',
         email: 'johndoe@example.com',
-        password: '123456'
-      }
+        password: '123456',
+      },
     })
-    
+
     const accessToken = jwt.sign({ sub: user.id })
 
     await prisma.question.createMany({
@@ -39,15 +39,15 @@ describe('Fetch recent questions (E2E)', () => {
           title: 'Question 01',
           slug: 'question-01',
           content: 'question content',
-          authorId: user.id
+          authorId: user.id,
         },
         {
           title: 'Question 02',
           slug: 'question-02',
           content: 'question content',
-          authorId: user.id
-        }
-      ]
+          authorId: user.id,
+        },
+      ],
     })
 
     const response = await request(app.getHttpServer())
@@ -57,7 +57,7 @@ describe('Fetch recent questions (E2E)', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body).toEqual([
       expect.objectContaining({ title: 'Question 01' }),
-      expect.objectContaining({ title: 'Question 02' })
+      expect.objectContaining({ title: 'Question 02' }),
     ])
   })
 })
