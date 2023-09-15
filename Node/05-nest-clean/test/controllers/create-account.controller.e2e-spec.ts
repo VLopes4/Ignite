@@ -1,7 +1,7 @@
-import { AppModule } from "@/app.module";
-import { PrismaService } from "@/prisma/prisma.service";
-import { INestApplication } from "@nestjs/common";
-import { Test } from "@nestjs/testing";
+import { AppModule } from '@/infra/app.module'
+import { PrismaService } from '@/infra/database/prisma/prisma.service'
+import { INestApplication } from '@nestjs/common'
+import { Test } from '@nestjs/testing'
 import request from 'supertest'
 
 describe('Create account (E2E)', () => {
@@ -17,21 +17,21 @@ describe('Create account (E2E)', () => {
     prisma = moduleRef.get(PrismaService)
 
     await app.init()
-  });
+  })
 
   test('[POST] /accounts', async () => {
     const response = await request(app.getHttpServer()).post('/accounts').send({
       name: 'John Doe',
       email: 'johndoe@example.com',
-      password: '123456'
+      password: '123456',
     })
 
     expect(response.statusCode).toBe(201)
 
     const userOnDatabase = await prisma.user.findFirst({
       where: {
-        email: 'johndoe@example.com'
-      }
+        email: 'johndoe@example.com',
+      },
     })
 
     expect(userOnDatabase).toBeTruthy()

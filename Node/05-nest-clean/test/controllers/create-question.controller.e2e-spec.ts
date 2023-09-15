@@ -1,8 +1,8 @@
-import { AppModule } from "@/app.module";
-import { PrismaService } from "@/prisma/prisma.service";
-import { INestApplication } from "@nestjs/common";
-import { JwtService } from "@nestjs/jwt";
-import { Test } from "@nestjs/testing";
+import { AppModule } from '@/infra/app.module'
+import { PrismaService } from '@/infra/database/prisma/prisma.service'
+import { INestApplication } from '@nestjs/common'
+import { JwtService } from '@nestjs/jwt'
+import { Test } from '@nestjs/testing'
 import request from 'supertest'
 
 describe('Create question (E2E)', () => {
@@ -20,17 +20,17 @@ describe('Create question (E2E)', () => {
     jwt = moduleRef.get(JwtService)
 
     await app.init()
-  });
+  })
 
   test('[POST] /questions', async () => {
     const user = await prisma.user.create({
       data: {
         name: 'John Doe',
         email: 'johndoe@example.com',
-        password: '123456'
-      }
+        password: '123456',
+      },
     })
-    
+
     const accessToken = jwt.sign({ sub: user.id })
 
     const response = await request(app.getHttpServer())
@@ -45,8 +45,8 @@ describe('Create question (E2E)', () => {
 
     const questionOnDatabase = await prisma.question.findFirst({
       where: {
-        title: 'New question'
-      }
+        title: 'New question',
+      },
     })
 
     expect(questionOnDatabase).toBeTruthy()
